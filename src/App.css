@@ -59,32 +59,108 @@
 /* Current weather */
 .current-weather {
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
   margin: 25px auto;
 }
 .current-weather > div {
-  background: white;
-  border-radius: 20px;
+  background-color: white;
   padding: 25px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  border-radius: 16px;
   text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .current-weather h2 {
-  margin: 0 0 25px;
+  margin: 0 0 10px;
+  color: #2563eb;
+  font-size: 26px;
+}
+.weather-icon {
+  font-size: 60px;
+  margin-bottom: 16px;
+}
+.description {
+  margin: 0 0 10px;
+  color: #64758b;
+  font-size: 18px;
+}
+.temperature {
+  margin: 10px 0 20px;
+  color: #2563eb;
+  font-size: 40px;
+  font-weight: bold;
+}
+.current-weather p:not(.description):not(.temperature) {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f0f7ff;
+  border-radius: 10px;
+  color: #334155;
+}
+
+/* Loading & Error */
+.loading {
+  text-align: center;
+  margin: 20px;
+  color: #2563eb;
+}
+.error {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 12px;
+  text-align: center;
+  background-color: #fee2e2;
+  color: #dc2626;
+  border-radius: 10px;
+}
+
+/* Forecast */
+.forecast {
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto;
+  text-align: center;
+}
+.forecast h2 {
+  margin-bottom: 20px;
   color: #2563eb;
   font-size: 24px;
 }
-.current-weather p {
-  margin: 12px 0;
-  padding: 12px 15px;
-  background: #f0f7ff;
-  border-radius: 12px;
-  color: #334155;
-  font-size: 16px;
+.forecast-list {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-.current-weather p:first-of-type {
-  font-size: 32px;
+.forecast-card {
+  width: 130px;
+  padding: 18px 12px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.forecast-date {
+  margin: 0 0 10px;
   font-weight: bold;
   color: #2563eb;
-  background: transparent;
+}
+.forecast-icon {
+  font-size: 45px;
+  margin: 8px 0;
+}
+.forecast-description {
+  margin: 5px 0 12px;
+  color: #64748b;
+  font-size: 14px;
+}
+.forecast-temp {
+  margin: 5px 0;
+  font-size: 22px;
+  font-weight: bold;
+  color: #334155;
+}
+.forecast-min-temp {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 15px;
 }
