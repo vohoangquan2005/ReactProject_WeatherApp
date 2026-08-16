@@ -7,8 +7,9 @@ function CurrentWeather({weather, location}){
     const weatherInfo = getWeatherInfo(weather.current.weather_code);
     return(
         <div className="current-weather">
+            <h1>Hôm nay</h1>
             <div>
-                <h2>{location.name}</h2>
+                <h2>{location.name}, {location.state}</h2>
                 <div className="weather-icon">{weatherInfo.icon}</div>
                 <p className="description">{weatherInfo.description}</p>
 {/* Dùng console.log(weatherData) trong handleSearch của App.jsx sẽ hiển thị ra những thông tin nhiệt độ, độ ẩm, tốc độ gió trong object */}

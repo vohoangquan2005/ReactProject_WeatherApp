@@ -1,12 +1,16 @@
+*{
+  box-sizing: border-box;
+}
 .app {
-  width: 500px;
+  width: 100%;
+  max-width: 700px;
   margin: auto;
   text-align: center;
 }
 
 /* Header */
 .header {
-  background: linear-gradient(135deg, skyblue, blue);
+  background: linear-gradient(135deg,white, skyblue, blue);
   color: white;
   text-align: center;
   padding: 24px;
@@ -34,7 +38,7 @@
   height: 40px;
 }
 .search-bar input{
-  width: 80%;
+  flex: 1;
   border-radius: 5px;
   border: none;
 }
@@ -49,18 +53,27 @@
   border: none;
   background: white;
 }
-.search-bar button:hover{
+.search-bar button:hover, .current-location:hover{
   transform: scale(1.08);
 }
-.search-bar button:active{
+.search-bar button:active, .current-location:active{
   transform: scale(0.9);
+}
+.current-location{
+  width: 20%;
+  height: 40px;
+  margin-top: 8px;
+  background: radial-gradient(white, skyblue, blue);
+  font-size: 16px;
+  color: black;
+  border-radius: 5px;
+  border: 1px solid blue;
 }
 
 /* Current weather */
 .current-weather {
   width: 100%;
-  max-width: 500px;
-  margin: 25px auto;
+  margin: auto;
 }
 .current-weather > div {
   background-color: white;
@@ -118,7 +131,7 @@
 .forecast {
   width: 100%;
   max-width: 900px;
-  margin: 30px auto;
+  margin: auto;
   text-align: center;
 }
 .forecast h2 {
@@ -128,12 +141,13 @@
 }
 .forecast-list {
   display: flex;
-  gap: 15px;
   justify-content: center;
+  gap: 15px;
+  width: 100%;
   flex-wrap: wrap;
 }
 .forecast-card {
-  width: 130px;
+  width: 125px;
   padding: 18px 12px;
   background-color: white;
   border-radius: 16px;
@@ -163,4 +177,62 @@
   margin: 0;
   color: #94a3b8;
   font-size: 15px;
+}
+/* Reponsive for Forecast */
+@media (max-width: 600px){
+  .forecast{
+    width: 100%;
+  }
+  .forecast-list{
+    gap: 10px;
+  }
+  .forecast-card{
+    width: 100%;
+  }
+}
+
+/* Reponsive for Current Weather */
+@media (max-width: 600px) {
+  .current-weather {
+    width: 95%;
+  }
+  .current-weather > div {
+    padding: 20px;
+  }
+  .temperature {
+    font-size: 36px;
+  }
+  .weather-icon {
+    font-size: 50px;
+  }
+}
+
+/* Reponsive for Search Bar */
+@media (max-width: 600px) {
+  .search-bar {
+    width: 90%;
+  }
+  .search-bar input {
+    width: 100%;
+  }
+}
+
+/* Recent cities */
+.recent-cities{
+  border: 1px solid white;
+  margin-top: 8px;
+}
+.recent-list button{
+  background: white;
+  color: black;
+  width: auto;
+  height: 30px;
+  margin: 8px;
+  border-radius: 5px;
+}
+.recent-list button:hover{
+  transform: translateY(-3px);
+}
+.recent-list button:active{
+  transform: translateY(1px);
 }
