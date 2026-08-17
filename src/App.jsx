@@ -40,6 +40,12 @@ function App() {
     setRecentCities(limitedCities);
   }
 
+  // Xóa Recent Cities
+  const deleteRecentCity = (cityName) =>{
+    const updatedCities = recentCities.filter((city) => city.toLowerCase() !== cityName.toLowerCase());
+    setRecentCities(updatedCities);
+  }
+
   // Handle Search
   const handleSearch = async (searchCityName = city) => {
     if (searchCityName.trim() === "") return;
@@ -149,6 +155,7 @@ function App() {
       <RecentCities
         cities={recentCities}
         onSelect={handleSelectCity}
+        onDelete={deleteRecentCity}
       />
 
       {loading && <p className="loading">⏳ Đang tải...</p>}

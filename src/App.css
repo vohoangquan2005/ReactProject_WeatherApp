@@ -41,6 +41,7 @@
   flex: 1;
   border-radius: 5px;
   border: none;
+  cursor: pointer;
 }
 .search-bar input:focus{
   background: white;
@@ -52,6 +53,7 @@
   border-radius: 5px;
   border: none;
   background: white;
+  cursor: pointer;
 }
 .search-bar button:hover, .current-location:hover{
   transform: scale(1.08);
@@ -68,6 +70,7 @@
   color: black;
   border-radius: 5px;
   border: 1px solid blue;
+  cursor: pointer;
 }
 
 /* Current weather */
@@ -187,7 +190,9 @@
     gap: 10px;
   }
   .forecast-card{
-    width: 100%;
+    /* Có thể hiểu đơn giản là:
+      Chiều rộng = 50% của phần tử cha − 5px */
+    width: calc(50% - 5px); 
   }
 }
 
@@ -218,21 +223,46 @@
 }
 
 /* Recent cities */
-.recent-cities{
-  border: 1px solid white;
-  margin-top: 8px;
+.recent-cities {
+  margin: 16px 0;
 }
-.recent-list button{
+.recent-cities h3 {
+  margin-bottom: 10px;
+  color: #2563eb;
+}
+.recent-list {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.recent-city {
+  display: flex;
+  align-items: center;
   background: white;
-  color: black;
-  width: auto;
-  height: 30px;
-  margin: 8px;
   border-radius: 5px;
 }
-.recent-list button:hover{
-  transform: translateY(-3px);
+.city-button {
+  padding: 8px 12px;
+  border: none;
+  background: white;
+  color: black;
+  cursor: pointer;
+  border-radius: 5px 0 0 5px;
+  font-size: 16px;
 }
-.recent-list button:active{
-  transform: translateY(1px);
+.delete-button {
+  padding: 8px 12px;
+  border: none;
+  background: white;
+  color: red;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+  font-size: 16px;
+}
+.city-button:hover {
+  background: lightgrey;
+}
+.delete-button:hover {
+  background: #fa9090;
 }

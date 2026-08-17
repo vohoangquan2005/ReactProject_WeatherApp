@@ -16,15 +16,15 @@ function Forecast({ weather }) {
         <div className="forecast">
             <h2>Dự báo thời tiết 5 ngày tới</h2>
             <div className="forecast-list">
-                {daily.time.slice(1, 6).map((date, index) => { //slice(0, 5) hiển thị phần tử từ 0 đến 5
-                    const weatherInfo = getWeatherInfo(daily.weather_code[index]);
+                {daily.time.slice(1, 6).map((date, index) => { //slice(0, 5) hiển thị phần tử từ 1 đến 6
+                    const weatherInfo = getWeatherInfo(daily.weather_code[index + 1]);
                     return (
                         <div className="forecast-card" key={date}>
                             <p className="forecast-date">{formatDate(date)}</p>
                             <div className="forecast-icon">{weatherInfo.icon}</div>
                             <p className="forecast-description">{weatherInfo.description}</p>
-                            <p className="forecast-temp">Max: {daily.temperature_2m_max[index]}°C</p>
-                            <p className="forecast-min-temp">Min: {daily.temperature_2m_min[index]}°C</p>
+                            <p className="forecast-temp">Max: {daily.temperature_2m_max[index + 1]}°C</p>
+                            <p className="forecast-min-temp">Min: {daily.temperature_2m_min[index + 1]}°C</p>
                         </div>
                     );
                 })}

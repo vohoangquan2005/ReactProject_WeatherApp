@@ -13,7 +13,8 @@ function SearchBar({city, setCity, handleSearch, handleLocation, loading}){
                 <button onClick={() => handleSearch()} disabled={loading}>🔍</button>
             </div>
             <button className="current-location" 
-                    onClick={handleLocation}>📍 Vị trí hiện tại</button>
+                    onClick={handleLocation}
+                    disabled={loading}>📍 Vị trí hiện tại</button>
         </>
     )
 }
