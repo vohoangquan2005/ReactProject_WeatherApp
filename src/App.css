@@ -266,3 +266,12 @@
 .delete-button:hover {
   background: #fa9090;
 }
+
+/* Footer */
+.footer{
+  margin-top: 24px;
+}
+.footer p{
+  font-size: 32px;
+  margin: 16px;
+}

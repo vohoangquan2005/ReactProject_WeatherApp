@@ -16,7 +16,7 @@ function Forecast({ weather }) {
         <div className="forecast">
             <h2>Dự báo thời tiết 5 ngày tới</h2>
             <div className="forecast-list">
-                {daily.time.slice(1, 6).map((date, index) => { //slice(0, 5) hiển thị phần tử từ 1 đến 6
+                {daily.time.slice(1, 6).map((date, index) => { //slice(1, 6) hiển thị phần tử từ 1 đến 6
                     const weatherInfo = getWeatherInfo(daily.weather_code[index + 1]);
                     return (
                         <div className="forecast-card" key={date}>
@@ -32,5 +32,4 @@ function Forecast({ weather }) {
         </div>
     );
 }
-
 export default Forecast;

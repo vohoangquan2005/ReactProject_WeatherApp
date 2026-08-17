@@ -6,6 +6,7 @@ import Header from "./components/Header.jsx"
 import CurrentWeather from "./components/CurrentWeather.jsx"
 import Forecast from "./components/Forecast.jsx";
 import RecentCities from "./components/RecentCities.jsx";
+import Footer from "./components/Footer.jsx";
 
 // API
 import { searchCity, getWeather, searchLocation } from "./services/weatherApi.js";
@@ -168,8 +169,8 @@ function App() {
       <Forecast
         weather={weather}
       />
+      <Footer />
     </div>
-
   )
 }
 export default App
